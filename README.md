@@ -1,6 +1,7 @@
 # Whole Genome Sequencing (WGS) of Escherichia coli
 
-Whole genome sequencing (WGS) is a powerful tool for analyzing the entire genetic material of an organism, including Escherichia coli. 
+Whole genome sequencing (WGS) is a powerful tool for analyzing the entire genetic material of an organism, including Escherichia coli.
+
 E.coli is commonly studied in research, clinical diagnostics, epidemiology, and public health to study this bacterium’s characteristics, such as its pathogenicity, resistance genes, and evolutionary relationships.
 
 # Steps in WGS of E. coli:
