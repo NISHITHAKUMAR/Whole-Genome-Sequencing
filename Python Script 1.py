@@ -9,7 +9,6 @@ df_path = "NEC1_DrugResistant.xlsx"
 des_path = "/home/Desktop/nishitha/Project/final/ECOLI/Gene_description.xlsx"
 file_path = "/home/Desktop/nishitha/Project/final/ECOLI/bacteria.gb"
 
-
 # file = open(NEC1_gene_result,"r").read()
 
 #save as excel file
@@ -17,7 +16,6 @@ header = ["qseqid","sseqid","pident","length","mismatch","gaps","qstart","qend",
 
 # save txt data as it is in excel
 df = pd.read_csv(NEC1_gene_result,sep="\t",names=header)
-
 
 # df.to_excel('output.xlsx', index=False)
 # shee2 with the pident is greater than equals to 99
@@ -59,8 +57,7 @@ ResFinder_final = ResFinder.sort_values("length")
 ResFinder_final = ResFinder_final.sort_values('pident').drop_duplicates('gene',).sort_index()
 #print(ResFinder.head())
 
-
-
+-----------############################------------------------------
 #for final need to append discription 
 #open the discription df
 #des_path = "Gene_description.xlsx"
@@ -92,7 +89,6 @@ for i in dfinal_gene:
            card.append("yes")
         else:
             card.append("no")    
-
 
 rest = []
 rest_gene = [i.lower() for i in ResFinder_final["gene"]]
@@ -159,14 +155,8 @@ for index, row in new_file2.iterrows():
         
         df_matched = pd.concat([df_matched, matched_rows])  # Concatenate matched rows to df_matched
         
-
-        
 # Reset the index of df_matched and drop the previous index
 df_matched.reset_index(drop=True, inplace=True)
-
-
-
-
 
 # add mutation column in dfinal.....................................................................
 
@@ -203,12 +193,6 @@ new_cols = ['qseqid','sseqid', 'Description', 'pident', 'length', 'mismatch',
 newfinal=newfinal[new_cols]
       
 
-
-
-
-
-
-
 #creating excel file 
 with pd.ExcelWriter('NEC1_DrugResistant.xlsx') as writer:  # doctest: +SKIP
    df.to_excel(writer, sheet_name='toexcel',index=False)
@@ -221,7 +205,6 @@ with pd.ExcelWriter('NEC1_DrugResistant.xlsx') as writer:  # doctest: +SKIP
    newfinal.to_excel(writer, sheet_name='final',index=False)
    print("Excel file Saved succusesfuly .......")
    
-
 #path
 # file_path = "/Users/nishitha/Dropbox/My Mac (Nishitha MacBook Pro)/Desktop/Mutation in AMR genes/ECOLI/bacteria.gb"
 # df_path = "NEC1_DrugResistant.xlsx"
@@ -380,7 +363,6 @@ graphic_record = translator.translate_record("Final.gb")
 ax, _ = graphic_record.plot(figure_width=30,figure_height = 5,strand_in_label_threshold=7)
 graphic_record.plot_legend(ax=ax, loc=1, ncol=3, frameon=False)
 ax.figure.savefig("A_linear_plot.svg", bbox_inches="tight") 
-
 
 """
 pyfile.write(plot)
